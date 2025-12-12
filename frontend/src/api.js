@@ -1,0 +1,41 @@
+// frontend/src/api.js
+const API_URL = "http://localhost:5000/api";
+
+export async function fetchTransactions() {
+    const res = await fetch(`${API_URL}/transactions`);
+    if (!res.ok) throw new Error("Failed to fetch transactions");
+    return res.json();
+}
+
+export async function createTransaction(data) {
+    const res = await fetch(`${API_URL}/transactions`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error("Failed to create transaction");
+    return res.json();
+}
+
+export async function updateTransaction(id, data) {
+    const res = await fetch(`${API_URL}/transactions/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error("Failed to update transaction");
+    return res.json();
+}
+
+export async function deleteTransaction(id) {
+    const res = await fetch(`${API_URL}/transactions/${id}`, {
+        method: "DELETE",
+    });
+    if (!res.ok) throw new Error("Failed to delete transaction");
+}
+
+export async function fetchSummary() {
+    const res = await fetch(`${API_URL}/summary`);
+    if (!res.ok) throw new Error("Failed to fetch summary");
+    return res.json();
+}
