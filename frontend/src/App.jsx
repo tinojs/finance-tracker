@@ -77,7 +77,6 @@ function App() {
         <div className="app">
             <header>
                 <h1>Finance Tracker</h1>
-                <p>React + Express + MySQL</p>
             </header>
 
             {error && <div className="error">{error}</div>}

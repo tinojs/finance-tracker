@@ -6,16 +6,16 @@ export default function Summary({ summary }) {
             <h2>Summary</h2>
             <div className="summary-row">
                 <span>Total income:</span>
-                <span>{totalIncome.toFixed(2)}</span>
+                <span>€{totalIncome.toFixed(2)}</span>
             </div>
             <div className="summary-row">
                 <span>Total expense:</span>
-                <span>{totalExpense.toFixed(2)}</span>
+                <span>€{totalExpense.toFixed(2)}</span>
             </div>
             <div className="summary-row balance">
                 <span>Balance:</span>
                 <span className={balance >= 0 ? "positive" : "negative"}>
-                    {balance.toFixed(2)}
+                    €{balance.toFixed(2)}
                 </span>
             </div>
         </div>
